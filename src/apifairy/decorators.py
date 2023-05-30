@@ -27,7 +27,7 @@ _webhooks = {}
 
 
 def _ensure_sync(f):
-    if flask.__version__ < '2.' or hasattr(f, '_sync_ensured'):
+    if hasattr(f, '_sync_ensured'):
         return f
 
     @wraps(f)
